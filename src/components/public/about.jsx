@@ -13,7 +13,7 @@ const ABout = () => {
         <div className="flex flex-col items-start justify-between md:flex-row md:justify-center md:items-center">
           <Cube />
           <div className="mt-10 ml-10 pb-10 md:flex-1 md:mt-14">
-            <h2 className="text-white text-center md:text-start mr-10 text-nowrap">Bienvenue sur mon portfolio !</h2>
+            <h2 className="text-white text-center mr-10 md:text-start md:text-nowrap">Bienvenue sur mon portfolio !</h2>
             <p className="text-justify mt-5 mr-10 text-white ">
               Je suis Hanh Nguyen, une développeuse web full stack débutante, animée par la passion de créer et d&apos;apprendre. Explorez mes projets
               et suivez mon évolution dans le monde du développement web.
