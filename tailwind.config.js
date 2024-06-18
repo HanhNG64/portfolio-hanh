@@ -12,9 +12,6 @@ export default {
         secondary: '#eec60f',
         tertiary: '#f5f5f5',
       },
-      gridTemplateColumns: {
-        menu: '200px 1fr 200px',
-      },
     },
   },
   plugins: [],

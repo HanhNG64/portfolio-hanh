@@ -14,7 +14,7 @@ const Footer = () => {
   );
 
   return (
-    <footer id="contact" className="bg-primary w-full">
+    <footer id="contact" className="bg-primary">
       <div className="flex flex-col items-center">
         <div className="flex flex-col h-full w-[300px] items-center mt-10 mb-10">
           <p className="font-engagement text-9xl text-white">Hanh</p>

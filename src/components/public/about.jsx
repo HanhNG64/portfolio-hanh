@@ -9,7 +9,8 @@ const ABout = () => {
       <div className="w-fit mx-auto md:ml-0">
         <h1 className="">DEVELOPPEUSE WEB</h1>
       </div>
-      <div className="relative max-w-screen-md mt-14 overflow-hidden gradient-border-top gradient-border-left bg-primary shadow-about pb-5">
+      {/* <div className="relative max-w-screen-md mt-14 overflow-hidden gradient-border-top gradient-border-left bg-primary shadow-black pb-5"> */}
+      <div className="relative max-w-screen-md mt-14 overflow-hidden gradient-border-top gradient-border-left bg-primary shadow-black">
         <div className="flex flex-col items-start justify-between md:flex-row md:justify-center md:items-center">
           <Cube />
           <div className="mt-10 ml-10 pb-10 md:flex-1 md:mt-14">
@@ -21,7 +22,7 @@ const ABout = () => {
           </div>
         </div>
       </div>
-      <div className="relative flex flex-col max-w-screen-md ml-auto mt-14 overflow-hidden shadow-about gradient-border-top-primary gradient-border-left-primary md:pl-5 md:flex-row md:justify-center md:items-center">
+      <div className="relative flex flex-col max-w-screen-md ml-auto mt-14 overflow-hidden shadow-black gradient-border-top-primary gradient-border-left-primary md:pl-5 md:flex-row md:justify-center md:items-center">
         <img src={Logo} alt="logo Hanh dev web" className="mx-auto w-64 h-64 mt-5 object-cover rounded-full md:mt-0" />
         <div className="flex flex-col justify-between items-start mt-10 ml-10 mr-10 mb-10">
           <div className="anim-bar mb-4"></div>
