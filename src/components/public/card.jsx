@@ -29,9 +29,9 @@ const Card = ({ project }) => {
     }
   };
 
-  const LinkImg = ({ to, src, alt, className, ariaLabel }) => {
+  const LinkImg = ({ to, src, alt, className, ariaLabel, targetBlank }) => {
     return (
-      <Link to={to} target="_blank" rel="noopener noreferrer">
+      <Link to={to} target={targetBlank ? '_blank' : undefined} rel={targetBlank ? 'noopener noreferrer' : undefined}>
         <img src={src} alt={alt} className={className} aria-label={ariaLabel} />
       </Link>
     );
@@ -49,6 +49,7 @@ const Card = ({ project }) => {
         alt="Image du projet"
         className="h-96 w-full max-w-full object-cover object-center"
         ariaLabel="Image du projet"
+        targetBlank={false}
       />
       <Button
         variant="text"
@@ -68,14 +69,21 @@ const Card = ({ project }) => {
           <li
             className={`w-9 h-9 rounded-full m-1 border border-primary flex justify-center items-center transform -translate-x-full transition-transform duration-200 ease-in-out ${!project.github ? '' : 'hover:bg-secondary '}`}
           >
-            <LinkImg to={`${project.github}`} src={LOGO.GITHUB} alt="Logo Github" className="w-10 object-cover" ariaLabel="Logo Github" />
+            <LinkImg
+              to={`${project.github}`}
+              src={LOGO.GITHUB}
+              targetBlank={true}
+              alt="Logo Github"
+              className="w-10 object-cover"
+              ariaLabel="Logo Github"
+            />
           </li>
         )}
         {project.site && (
           <li
             className={`w-9 h-9 rounded-full m-1 border border-primary bg-[#0d1137cc] flex justify-center items-center transform -translate-x-full transition-transform duration-200 ease-in-out ${!project.site ? '' : 'hover:bg-secondary '}`}
           >
-            <LinkImg to={`${project.site}`} src={LOGO.DRIBLLE} alt="Logo Dribble" className="w-8" aria-label="Logo Dribble" />
+            <LinkImg to={`${project.site}`} src={LOGO.DRIBLLE} alt="Logo Dribble" targetBlank={true} className="w-8" aria-label="Logo Dribble" />
           </li>
         )}
       </ul>
