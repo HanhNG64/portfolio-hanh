@@ -1,0 +1,235 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: Poppins, system-ui, sans-serif;
+  }
+  h1 {
+    @apply text-3xl sm:text-4xl md:text-5xl relative cursor-default;
+    &::after {
+      content: '';
+      @apply w-0 h-1 absolute -bottom-2 left-0 bg-gradient-to-r from-primary to-secondary rounded-full transition-width duration-500;
+    }
+    &:hover::after {
+      @apply w-full;
+    }
+  }
+  h2 {
+    @apply text-[24px];
+  }
+}
+
+@layer utilities {
+  .max-container {
+    @apply w-full max-w-screen-xl;
+  }
+  .main-padding-top {
+    @apply pt-[50px];
+  }
+  .main-padding-bottom {
+    @apply pb-10;
+  }
+  .main-padding-x {
+    @apply px-8;
+  }
+
+  .transition-width {
+    transition-property: width;
+  }
+
+  .center-row {
+    @apply flex justify-between items-center;
+  }
+
+  .transparent-menu {
+    background-color: rgba(13, 17, 55, 0.5);
+  }
+
+  .shadow-yellow {
+    box-shadow:
+      0 10px 15px -3px rgba(255, 223, 0, 0.4),
+      0 4px 6px -2px rgba(255, 223, 0, 0.3);
+  }
+
+  .shadow-about {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .shape-margin-box {
+    shape-outside: margin-box;
+  }
+
+  .after-clear::after {
+    @apply:block clear-both content-none;
+  }
+}
+
+@layer components {
+  .bar {
+    @apply border-t-4 h-1 w-20 relative;
+    background: linear-gradient(to right, transparent, yellow 50%, transparent);
+    animation: colorMove 2s linear infinite;
+  }
+
+  @keyframes colorMove {
+    0% {
+      background-position: 0%;
+    }
+    100% {
+      background-position: 100%;
+    }
+  }
+
+  .anim-bar {
+    @apply w-20 h-1 rounded-full;
+    background: linear-gradient(to right, rgba(13, 17, 55, 1), rgba(255, 223, 0, 1), white);
+    background-size: 200% 100%;
+    animation: move-anim-bar 1.5s linear infinite;
+  }
+
+  @keyframes move-anim-bar {
+    100% {
+      background-position: 100%;
+    }
+  }
+
+  .anim-gradient-bar-horizontal {
+    @apply w-28 h-1 rounded-full;
+    background: linear-gradient(to right, rgba(13, 17, 55, 1), rgba(255, 223, 0, 1), rgba(13, 17, 55, 1));
+    background-size: 200% 100%;
+    animation: move-gradient-bar-horizontal 1.5s linear infinite;
+  }
+
+  @keyframes move-gradient-bar-horizontal {
+    50% {
+      background-position: 100% 0%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  }
+
+  .anim-gradient-bar-vertical {
+    @apply w-1 h-28 rounded-full;
+    background: linear-gradient(to bottom, rgba(13, 17, 55, 1), rgba(255, 223, 0, 1), rgba(13, 17, 55, 1));
+    background-size: 100% 200%;
+    animation: move-gradient-bar-vertical 1.5s linear infinite;
+  }
+
+  @keyframes move-gradient-bar-vertical {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 0% 100%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  }
+
+  .gradient-border-top::before {
+    content: '';
+    @apply w-full h-1 rounded-full absolute top-0 left-0;
+    background: linear-gradient(to right, rgba(255, 223, 0, 1), white);
+  }
+
+  .gradient-border-left::after {
+    content: '';
+    @apply h-full w-1 absolute top-0 left-0;
+    background: linear-gradient(to bottom, rgba(255, 223, 0, 1), white);
+  }
+
+  .gradient-border-top-primary::before {
+    content: '';
+    @apply w-full h-1 rounded-full absolute top-0 left-0;
+    background: linear-gradient(to right, rgba(13, 17, 55, 1), white);
+  }
+
+  .gradient-border-left-primary::after {
+    content: '';
+    @apply h-full w-1 absolute top-0 left-0;
+    background: linear-gradient(to bottom, rgba(13, 17, 55, 1), white);
+  }
+}
+
+.header-fixed-height {
+  height: 80px;
+}
+
+.toggle-menu.hidden {
+  display: none;
+}
+
+.toggle-menu.flex {
+  display: flex;
+}
+
+.arrow-visible {
+  bottom: 0;
+  opacity: 1;
+  transition:
+    bottom 0.3s,
+    opacity 0.3s;
+}
+
+.arrow-hidden {
+  bottom: -100px;
+  opacity: 0;
+  transition:
+    bottom 0.3s,
+    opacity 0.3s;
+}
+
+/* CUBE*/
+.container {
+  width: 150px;
+  height: 150px;
+  perspective: 1000px;
+}
+
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: cubeSpin 5s infinite linear;
+}
+
+.face {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+}
+
+.top {
+  transform: rotateX(90deg) translateZ(70px);
+}
+.bottom {
+  transform: rotateX(-90deg) translateZ(70px);
+}
+
+.right {
+  transform: rotateY(90deg) translateZ(70px);
+}
+.left {
+  transform: rotateY(-90deg) translateZ(70px);
+}
+
+.front {
+  transform: rotateX(0deg) translateZ(70px);
+}
+.back {
+  transform: rotateX(-180deg) translateZ(70px);
+}
+
+@keyframes cubeSpin {
+  from {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
