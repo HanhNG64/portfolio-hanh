@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { userService, accountService } from '@services';
 import { Card, Typography } from '@material-tailwind/react';
+import Loader from '@components/public/loader';
 
 const TABLE_HEAD = ['Nom', 'Email'];
 
@@ -37,7 +38,7 @@ const User = () => {
   };
 
   if (!isLoad) {
-    return <div>loading...</div>;
+    return <Loader />;
   }
 
   return (

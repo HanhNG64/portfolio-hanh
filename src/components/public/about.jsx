@@ -33,7 +33,7 @@ const ABout = () => {
             découvrir mon parcours, et ensemble, créons des projets innovants et passionnants.
           </p>
           <div className="flex flex-col items-end mt-3 ml-auto">
-            <a href={CV} download className="flex flex-col items-end mt-3 hover:text-secondary">
+            <a href={CV} target="_blank" rel="noopener noreferrer" className="flex flex-col items-end mt-3 hover:text-secondary">
               Voir mon CV
             </a>
             <div className="anim-bar mr-10"></div>

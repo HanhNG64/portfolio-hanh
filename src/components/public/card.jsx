@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { projectService } from '@services';
 import { LOGO } from '@utils/logoConstants.jsx';
 import { Button } from '@material-tailwind/react';
+import Loader from '@components/public/loader';
 
 const Card = ({ project }) => {
   const [like, setLike] = useState(0);
@@ -30,14 +31,14 @@ const Card = ({ project }) => {
 
   const LinkImg = ({ to, src, alt, className, ariaLabel }) => {
     return (
-      <Link to={to}>
+      <Link to={to} target="_blank" rel="noopener noreferrer">
         <img src={src} alt={alt} className={className} aria-label={ariaLabel} />
       </Link>
     );
   };
 
   if (!isLoad) {
-    return <div>loading...</div>;
+    return <Loader />;
   }
 
   return (
@@ -63,17 +64,20 @@ const Card = ({ project }) => {
       </Button>
 
       <ul className="side-social absolute top-0 h-full list-none transform translate-x-0 opacity-0 group-hover:translate-x-10 group-hover:opacity-100 transition-transform duration-200 ease-in-out">
-        <li
-          disabled={!project.github}
-          className={`w-9 h-9 rounded-full m-1 border border-primary bg-[#0d1137cc] flex justify-center items-center transform -translate-x-full transition-transform duration-200 ease-in-out ${!project.github ? '' : 'hover:bg-secondary '}`}
-        >
-          <LinkImg to={`${project.github}`} src={LOGO.GITHUB} alt="Logo Github" className="w-10 object-cover" ariaLabel="Logo Github" />
-        </li>
-        <li
-          className={`w-9 h-9 rounded-full m-1 border border-primary bg-[#0d1137cc] flex justify-center items-center transform -translate-x-full transition-transform duration-200 ease-in-out ${!project.site ? '' : 'hover:bg-secondary '}`}
-        >
-          <LinkImg disabled={!project.site} to={`${project.site}`} src={LOGO.DRIBLLE} alt="Logo Dribble" className="w-8" aria-label="Logo Dribble" />
-        </li>
+        {project.github && (
+          <li
+            className={`w-9 h-9 rounded-full m-1 border border-primary flex justify-center items-center transform -translate-x-full transition-transform duration-200 ease-in-out ${!project.github ? '' : 'hover:bg-secondary '}`}
+          >
+            <LinkImg to={`${project.github}`} src={LOGO.GITHUB} alt="Logo Github" className="w-10 object-cover" ariaLabel="Logo Github" />
+          </li>
+        )}
+        {project.site && (
+          <li
+            className={`w-9 h-9 rounded-full m-1 border border-primary bg-[#0d1137cc] flex justify-center items-center transform -translate-x-full transition-transform duration-200 ease-in-out ${!project.site ? '' : 'hover:bg-secondary '}`}
+          >
+            <LinkImg to={`${project.site}`} src={LOGO.DRIBLLE} alt="Logo Dribble" className="w-8" aria-label="Logo Dribble" />
+          </li>
+        )}
       </ul>
       <div className="profile-info absolute bottom-0 w-full p-2 bg-primary border-t-2 text-center transform translate-y-full transition duration-300 ease-in-out group-hover:translate-y-0">
         <p className="text-lg font-semibold mb-1 text-white">{project.title}</p>

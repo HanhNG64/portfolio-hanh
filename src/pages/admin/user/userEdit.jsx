@@ -3,6 +3,7 @@ import { useParams } from 'react-router';
 import { userService, accountService } from '@services';
 import { useNavigate } from 'react-router-dom';
 import UserForm from '@components/admin/userForm';
+import Loader from '@components/public/loader';
 
 const UserEdit = () => {
   let { id } = useParams();
@@ -45,7 +46,7 @@ const UserEdit = () => {
   };
 
   if (!isLoad) {
-    return <div>loading...</div>;
+    return <Loader />;
   }
 
   return (
