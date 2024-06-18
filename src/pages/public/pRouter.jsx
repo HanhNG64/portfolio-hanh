@@ -1,12 +1,11 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Error from '@utils/error';
-import { PLayout, Home, Projects, ProjectDetail, ScrollToSection } from '@pages/public';
+import { PLayout, Home, Projects, ProjectDetail } from '@pages/public';
 
 const PublicRouter = () => {
   return (
     <>
-      <ScrollToSection />
       <Routes>
         <Route element={<PLayout />}>
           <Route index element={<Home />} />

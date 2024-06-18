@@ -22,11 +22,11 @@ const ABout = () => {
         </div>
       </div>
       <div className="relative flex flex-col max-w-screen-md ml-auto mt-14 overflow-hidden shadow-about gradient-border-top-primary gradient-border-left-primary md:pl-5 md:flex-row md:justify-center md:items-center">
-        <img src={Logo} alt="logo Hanh dev web" className="mx-auto w-64 h-64 object-cover rounded-full" />
+        <img src={Logo} alt="logo Hanh dev web" className="mx-auto w-64 h-64 mt-5 object-cover rounded-full md:mt-0" />
         <div className="flex flex-col justify-between items-start mt-10 ml-10 mr-10 mb-10">
           <div className="anim-bar mb-4"></div>
           <h2 className="font-engagement text-4xl mb-5">Hanh Nguyen</h2>
-          <p className="text-justify max-w-[450px]">
+          <p className="text-justify">
             Après des années en développement Java, j&apos;ai découvert un engouement pour le développement web. Fascinée par la créativité, j&apos;ai
             suivi une formation pour enrichir mes compétences en Frontend et Backend. Actuellement, je cherche un poste de développeuse web full stack
             dans une entreprise dynamique. Mon objectif est de mettre en pratique mes compétences tout en continuant à évoluer. Explorez mon CV pour
