@@ -98,13 +98,13 @@ const Header = () => {
       <React.Fragment>
         <Menu open={isMenuOpen} handler={setIsMenuOpen} offset={{ mainAxis: 20 }} placement="bottom" allowHover={true}>
           <MenuHandler>
-            <Typography as="div" variant="small" className="font-medium">
+            <Typography as="div" variant="small" className="font-bold">
               <ListItem
-                className="flex items-center gap-2 py-2 pr-4 font-medium text-white"
+                className="flex items-center gap-2 py-2 pr-4 font-medium text-white text-lg"
                 selected={isMenuOpen || isMobileMenuOpen}
                 onClick={() => setIsMobileMenuOpen((cur) => !cur)}
               >
-                Actions
+                GESTION
                 <ChevronDownIcon strokeWidth={2.5} className={`hidden h-3 w-3 transition-transform lg:block ${isMenuOpen ? 'rotate-180' : ''}`} />
                 <ChevronDownIcon
                   strokeWidth={2.5}
@@ -128,7 +128,7 @@ const Header = () => {
     return (
       <List className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:p-1">
         <Typography as="a" href="/home" variant="small" className="font-medium">
-          <ListItem className="flex items-center gap-2 py-2 pr-4">Accueil</ListItem>
+          <ListItem className="flex items-center gap-2 py-2 pr-4 text-lg">ACCUEIL</ListItem>
         </Typography>
         <NavListMenu />
       </List>
@@ -155,10 +155,10 @@ const Header = () => {
             <NavList />
           </div>
           <div className="hidden gap-2 lg:flex">
-            <Button variant="text" size="sm" color="blue-gray" onClick={login}>
+            <Button variant="text" size="sm" color="blue-gray" onClick={login} className="font-medium">
               Connexion
             </Button>
-            <Button variant="gradient" size="sm" onClick={logout}>
+            <Button variant="gradient" size="sm" onClick={logout} className="font-medium">
               Déconnexion
             </Button>
           </div>
@@ -181,11 +181,11 @@ const Header = () => {
 
       {isScrolled && (
         <div
-          className="w-10 h-10 ml-2 fixed bottom-0 right-2 mb-4 mr-4 animate-bounce bg-primary shadow-yellow rounded-full flex items-center justify-center"
+          className="w-10 h-10 ml-2 fixed bottom-0 right-2 mb-4 mr-4 animate-bounce bg-primary shadow-yellow rounded-full flex items-center justify-center cursor-pointer"
           onClick={scrollToTop}
         >
           <svg
-            className="w-6 h-6 text-white sm:w-8 "
+            className="w-6 h-6 text-white sm:w-8 hover:text-secondary"
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth="2"

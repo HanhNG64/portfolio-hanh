@@ -98,11 +98,11 @@ const Header = () => {
 
       {isScrolled && (
         <div
-          className="z-20 w-10 h-10 ml-2 fixed bottom-0 right-2 mb-4 mr-4 animate-bounce bg-primary shadow-yellow rounded-full flex items-center justify-center"
+          className="z-20 w-10 h-10 ml-2 fixed bottom-0 right-2 mb-4 mr-4 animate-bounce bg-primary shadow-yellow rounded-full flex items-center justify-center cursor-pointer"
           onClick={scrollToTop}
         >
           <svg
-            className="w-6 h-6 text-white sm:w-8 "
+            className="w-6 h-6 text-white sm:w-8 hover:text-secondary"
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth="2"

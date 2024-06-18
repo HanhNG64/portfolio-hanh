@@ -42,7 +42,7 @@ const Card = ({ project }) => {
   }
 
   return (
-    <article className="relative overflow-hidden rounded-2xl placeholder:cursor-pointer border border-gray-300 hover:border-primary transition-transform duration-400 ease-out group">
+    <article className="relative overflow-hidden rounded-2xl placeholder:cursor-pointer border border-gray-300 hover:border-primary md:transition-transfor md:duration-400 md:ease-out group">
       <LinkImg
         to={`/projects/${project._id}`}
         src={project.image}
@@ -56,7 +56,7 @@ const Card = ({ project }) => {
         color="red"
         size="sm"
         onClick={onLike}
-        className="!absolute top-0 right-0 rounded-full flex items-center justify-center p-1.5 mt-2 mr-2"
+        className="!absolute top-2 right-0 rounded-full flex items-center justify-center p-1.5 mr-2"
       >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6">
           <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
@@ -64,10 +64,10 @@ const Card = ({ project }) => {
         <span className="ml-1.5">{like}</span>
       </Button>
 
-      <ul className="side-social absolute top-0 h-full list-none transform translate-x-0 opacity-0 group-hover:translate-x-10 group-hover:opacity-100 transition-transform duration-200 ease-in-out">
+      <ul className="side-social absolute top-2 h-full list-none left-2 md:left-0 transform translate-x-0 md:opacity-0 md:group-hover:translate-x-2 md:group-hover:opacity-100 md:transition-transform md:duration-200 md:ease-in-out">
         {project.github && (
           <li
-            className={`w-9 h-9 rounded-full m-1 border border-primary flex justify-center items-center transform -translate-x-full transition-transform duration-200 ease-in-out ${!project.github ? '' : 'hover:bg-secondary '}`}
+            className={`w-9 h-9 rounded-full m-1 border border-primary bg-white flex justify-center items-center ${!project.github ? '' : 'hover:bg-secondary '}`}
           >
             <LinkImg
               to={`${project.github}`}
@@ -81,13 +81,13 @@ const Card = ({ project }) => {
         )}
         {project.site && (
           <li
-            className={`w-9 h-9 rounded-full m-1 border border-primary bg-[#0d1137cc] flex justify-center items-center transform -translate-x-full transition-transform duration-200 ease-in-out ${!project.site ? '' : 'hover:bg-secondary '}`}
+            className={`w-9 h-9 rounded-full m-1 border border-primary bg-[#0d1137cc] flex justify-center items-center ${!project.site ? '' : 'hover:bg-secondary '}`}
           >
             <LinkImg to={`${project.site}`} src={LOGO.DRIBLLE} alt="Logo Dribble" targetBlank={true} className="w-8" aria-label="Logo Dribble" />
           </li>
         )}
       </ul>
-      <div className="profile-info absolute bottom-0 w-full p-2 bg-primary border-t-2 text-center transform translate-y-full transition duration-300 ease-in-out group-hover:translate-y-0">
+      <div className="profile-info absolute bottom-0 w-full p-2 bg-primary border-t-2 text-center md:transform md:translate-y-full md:transition md:duration-300 md:ease-in-out md:group-hover:translate-y-0">
         <p className="text-lg font-semibold mb-1 text-white">{project.title}</p>
         <p className="text-lg font-semibold mb-1 text-white">{project.subTitle}</p>
       </div>
