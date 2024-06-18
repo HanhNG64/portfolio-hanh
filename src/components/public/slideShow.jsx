@@ -21,7 +21,7 @@ const SlideShow = ({ pictures }) => {
         loop={true}
         autoplay={true}
         transition={{ type: 'tween', duration: 0.5 }}
-        className="rounded-xl"
+        className="rounded-xl w-full h-[250px] md:h-full"
         prevArrow={({ handlePrev }) => (
           <IconButton
             variant="text"
@@ -51,7 +51,7 @@ const SlideShow = ({ pictures }) => {
         )}
       >
         {pictures.map((image, index) => (
-          <img key={index} src={image} alt={`Slide ${index}`} className="h-[500px] w-full object-cover object-center" />
+          <img key={index} src={image} alt={`Slide ${index}`} className="h-full w-full object-cover object-center" />
         ))}
       </Carousel>
       <div className="flex flex-col items-end mt-3">
