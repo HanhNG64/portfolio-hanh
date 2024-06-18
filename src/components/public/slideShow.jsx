@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Carousel } from '@material-tailwind/react';
-import { Link as LinkRooter } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { ThemeProvider } from '@material-tailwind/react';
 import customCarousselTheme from '@components/public/customCarousselTheme';
 
@@ -25,7 +25,9 @@ const SlideShow = ({ pictures }) => {
           ))}
         </Carousel>
         <div className="flex flex-col items-end mt-3">
-          <LinkRooter to="/projects">Voir mes projets</LinkRooter>
+          <NavLink to="/projects" className="flex items-center hover:text-secondary transition-colors">
+            Voir mes projets
+          </NavLink>
           <div className="anim-bar mr-16"></div>
         </div>
       </section>
