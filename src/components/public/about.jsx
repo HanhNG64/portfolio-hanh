@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from '@assets/portrait.webp';
 import Cube from '@components/public/cube';
-import CV from '@assets/cv_hanh.pdf';
+import CV from '@assets/CV_HANH_NGUYEN.pdf';
 
 const ABout = () => {
   return (

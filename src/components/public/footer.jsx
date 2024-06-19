@@ -6,8 +6,8 @@ import { LOGO } from '@utils/logoConstants.jsx';
 
 const Footer = () => {
   const SocialLink = ({ url, logo, alt, imgClass }) => (
-    <Link to={url}>
-      <div className="h-10 w-10 flex justify-center items-center bg-white rounded-full">
+    <Link to={url} target="_blank" rel="noopener noreferrer">
+      <div className="h-10 w-10 flex justify-center items-center bg-white rounded-full hover:bg-secondary">
         <img src={logo} alt={alt} className={imgClass} />
       </div>
     </Link>
