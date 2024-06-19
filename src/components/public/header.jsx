@@ -45,11 +45,6 @@ const Header = () => {
           </NavLink>
         </Typography>
         <Typography as="li" variant="small" className="p-1 font-medium">
-          <NavLink to="/home#about" className="flex items-center hover:text-secondary transition-colors text-lg">
-            A propos
-          </NavLink>
-        </Typography>
-        <Typography as="li" variant="small" className="p-1 font-medium">
           <NavLink to="/projects" className="flex items-center hover:text-secondary transition-colors text-lg">
             Projets
           </NavLink>
