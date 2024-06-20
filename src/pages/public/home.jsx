@@ -1,38 +1,19 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { projectService } from '@services';
+import React from 'react';
 import ABout from '@components/public/about';
 import SlideShow from '@components/public/slideShow';
 import Skills from '@components/public/skills';
 import Loader from '@components/public/loader';
+import { useFetchProjectImages } from '@utils/projectUtil.jsx';
 
 const Home = () => {
-  const [projects, setProjects] = useState([]);
-  const [isLoad, setLoad] = useState(false);
-  const flag = useRef(false);
+  const { projects, isLoading } = useFetchProjectImages();
 
-  useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        if (flag.current === false) {
-          const projects = await projectService.getAllProjects();
-          setProjects(projects.data);
-        }
-      } catch (error) {
-        console.error('Error fetching projects:', error);
-      } finally {
-        setLoad(true);
-      }
-    };
-    fetchProjects();
-    return () => (flag.current = true);
-  }, []);
-
-  if (!isLoad) {
+  if (isLoading) {
     return <Loader />;
   }
 
   const images = () => {
-    return projects.map((project) => project.image).filter((url) => url);
+    return projects.map((project) => project.image);
   };
 
   return (

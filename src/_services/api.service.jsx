@@ -68,14 +68,19 @@ let deleteUser = async (token, id) => {
 };
 
 /* Projects */
+let getAllProjectImages = async () => {
+  const result = await fetch(`${API_ROUTES.PROJECTS}/images`);
+  return result;
+};
+
 let getAllProjects = async () => {
   const result = await fetch(`${API_ROUTES.PROJECTS}`);
-  return await result.json();
+  return result;
 };
 
 let getProject = async (id) => {
   const result = await fetch(`${API_ROUTES.PROJECTS}/${id}`);
-  return await result.json();
+  return result;
 };
 
 let addProject = async (token, project) => {
@@ -148,6 +153,7 @@ export const apiService = {
   addUser,
   updateUser,
   deleteUser,
+  getAllProjectImages,
   getAllProjects,
   getProject,
   addProject,

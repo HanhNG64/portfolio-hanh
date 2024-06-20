@@ -1,5 +1,9 @@
 import { apiService } from './api.service';
 
+let getAllProjectImages = async () => {
+  return apiService.getAllProjectImages();
+};
+
 let getAllProjects = async () => {
   return apiService.getAllProjects();
 };
@@ -24,4 +28,4 @@ let likeProject = (like, id) => {
   return apiService.likeProject(like, id);
 };
 
-export const projectService = { getAllProjects, getProject, addProject, updateProject, deleteProject, likeProject };
+export const projectService = { getAllProjectImages, getAllProjects, getProject, addProject, updateProject, deleteProject, likeProject };

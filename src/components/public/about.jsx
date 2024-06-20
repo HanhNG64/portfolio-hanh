@@ -9,7 +9,6 @@ const ABout = () => {
       <div className="w-fit mx-auto md:ml-0">
         <h1 className="">DEVELOPPEUSE WEB</h1>
       </div>
-      {/* <div className="relative max-w-screen-md mt-14 overflow-hidden gradient-border-top gradient-border-left bg-primary shadow-black pb-5"> */}
       <div className="relative max-w-screen-md mt-14 overflow-hidden gradient-border-top gradient-border-left bg-primary shadow-black">
         <div className="flex flex-col items-start justify-between md:flex-row md:justify-center md:items-center">
           <Cube />

@@ -1,31 +1,13 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { projectService } from '@services';
+import React from 'react';
 import Card from '@components/public/card';
 import Loader from '@components/public/loader';
+import { useFetchProjects } from '@utils/projectUtil.jsx';
 
 const Projects = () => {
-  const [projects, setProjects] = useState([]);
-  const flag = useRef(false);
-  const [isLoad, setLoad] = useState(false);
+  const { projects, isLoading, error } = useFetchProjects();
+  window.scrollTo(0, 0);
 
-  useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        if (flag.current === false) {
-          const projects = await projectService.getAllProjects();
-          setProjects(projects.data);
-        }
-      } catch (error) {
-        console.error('Error fetching projects:', error);
-      } finally {
-        setLoad(true);
-      }
-    };
-    fetchProjects();
-    return () => (flag.current = true);
-  }, []);
-
-  if (!isLoad) {
+  if (isLoading) {
     return <Loader />;
   }
 
@@ -34,11 +16,15 @@ const Projects = () => {
       <div className="w-fit mx-auto md:ml-0">
         <h1>Les projets réalisés</h1>
       </div>
-      <section className="mt-14 grid grid-cols-1 gap-4 gap-y-8 sm:grid-cols-2 md:grid-cols-3">
-        {projects.map((project, index) => (
-          <Card key={index} project={project} />
-        ))}
-      </section>
+      {error && <div className="TOTO h-[30vh] flex items-center justify-center mx-auto">Erreur de récupération de données...</div>}
+
+      {!error && (
+        <section className="mt-14 grid grid-cols-1 gap-4 gap-y-8 sm:grid-cols-2 md:grid-cols-3">
+          {projects.map((project, index) => (
+            <Card key={index} project={project} />
+          ))}
+        </section>
+      )}
     </div>
   );
 };
