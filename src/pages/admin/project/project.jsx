@@ -19,8 +19,9 @@ const Project = () => {
         if (flag.current === false) {
           if (accountService.isLogged()) {
             const result = await projectService.getAllProjects();
-            setProjects(result.data);
-            if (result.data.length > 0) setProjectActive(result.data[0]);
+            const projects = await result.json();
+            setProjects(projects.data);
+            if (projects.data.length > 0) setProjectActive(projects.data[0]);
             setLoad(true);
           }
         }
@@ -52,6 +53,7 @@ const Project = () => {
   const handleEditClick = () => {
     const isInProjects = location.pathname.includes('/project');
     const url = isInProjects ? `./edit/${projectActive._id}` : `project/edit/${projectActive._id}`;
+    console.log('url:', url);
     navigate(`${url}`);
   };
 

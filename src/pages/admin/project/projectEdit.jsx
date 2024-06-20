@@ -18,7 +18,8 @@ const ProjectEdit = () => {
         if (flag.current === false) {
           if (accountService.isLogged()) {
             const result = await projectService.getProject(id);
-            setProject(result.data);
+            const project = await result.json();
+            setProject(project.data);
             setLoad(true);
           }
         }

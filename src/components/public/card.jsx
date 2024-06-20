@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { projectService } from '@services';
 import { LOGO } from '@utils/logoConstants.jsx';
@@ -9,15 +9,12 @@ import Loader from '@components/public/loader';
 const Card = ({ project }) => {
   const [like, setLike] = useState(0);
   const [isLoad, setLoad] = useState(false);
-  const flag = useRef(false);
 
   const projectLikes = project.like;
 
   useEffect(() => {
-    if (flag.current === false) {
-      setLike(projectLikes);
-      setLoad(true);
-    }
+    setLike(projectLikes);
+    setLoad(true);
   }, [projectLikes]);
 
   let onLike = async () => {

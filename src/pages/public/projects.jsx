@@ -16,7 +16,7 @@ const Projects = () => {
       <div className="w-fit mx-auto md:ml-0">
         <h1>Les projets réalisés</h1>
       </div>
-      {error && <div className="TOTO h-[30vh] flex items-center justify-center mx-auto">Erreur de récupération de données...</div>}
+      {error && <div className="h-[30vh] flex items-center justify-center mx-auto">Erreur de récupération de données...</div>}
 
       {!error && (
         <section className="mt-14 grid grid-cols-1 gap-4 gap-y-8 sm:grid-cols-2 md:grid-cols-3">
