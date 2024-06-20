@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { projectService } from '@services';
 
 export function useFetchProjectImages() {
-  const [projects, setProjects] = useState([]);
+  const [images, setImages] = useState([]);
   const [isLoading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
@@ -12,7 +12,7 @@ export function useFetchProjectImages() {
       try {
         const response = await projectService.getAllProjectImages();
         const images = await response.json();
-        setProjects(images.data);
+        setImages(images.data);
       } catch (err) {
         setError(true);
       } finally {
@@ -22,7 +22,7 @@ export function useFetchProjectImages() {
     fetchData();
   }, []);
 
-  return { projects, isLoading, error };
+  return { images, isLoading, error };
 }
 
 export function useFetchProjects() {

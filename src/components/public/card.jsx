@@ -28,7 +28,7 @@ const Card = ({ project }) => {
 
   const LinkImg = ({ to, src, alt, className, ariaLabel, targetBlank }) => {
     return (
-      <Link to={to} target={targetBlank ? '_blank' : undefined} rel={targetBlank ? 'noopener noreferrer' : undefined}>
+      <Link to={to} target={targetBlank ? '_blank' : undefined} rel={targetBlank ? 'noopener noreferrer' : undefined} className="block w-full h-full">
         <img src={src} alt={alt} className={className} aria-label={ariaLabel} />
       </Link>
     );
@@ -39,12 +39,12 @@ const Card = ({ project }) => {
   }
 
   return (
-    <article className="relative overflow-hidden rounded-2xl placeholder:cursor-pointer border border-gray-300 hover:border-primary md:transition-transfor md:duration-400 md:ease-out group">
+    <article className="relative overflow-hidden rounded-2xl border border-gray-300 hover:border-primary transition-transform duration-400 ease-out group w-full sm:max-w-[300px] md:max-w-[350px] lg:max-w-[400px]">
       <LinkImg
         to={`/projects/${project._id}`}
-        src={project.image}
+        src={project.image_min}
         alt="Image du projet"
-        className="h-96 w-full max-w-full object-cover object-center"
+        className="w-full h-full object-cover object-center"
         ariaLabel="Image du projet"
         targetBlank={false}
       />

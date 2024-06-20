@@ -102,15 +102,16 @@ function ProjectForm({ submit, project }) {
           />
         </label>
 
-        <div className="border">
+        <div className="border mb-5">
           <label htmlFor="file" className="text-left mb-[2px]">
             <p className="text-center pt-10 pb-10">Image du projet*</p>
             <div className="h-full w-full object-cover object-center flex justify-center items-center">
-              {(filePreview || project?.image) && <img src={filePreview ?? project?.image} alt="preview" />}
+              {(filePreview || project?.image_cover) && <img src={filePreview ?? project?.image_cover} alt="preview" />}
             </div>
             <input {...register('file')} type="file" id="file" className="mb-4 p-1 rounded-md resize-none text-black" />
           </label>
         </div>
+
         <button
           disabled={!isValid}
           className={`py-2 px-4 border-transparent shadow-sm text-base font-medium rounded-md text-white bg-primary ${!isValid ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}

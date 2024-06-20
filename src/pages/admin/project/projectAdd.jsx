@@ -35,7 +35,7 @@ const ProjectAdd = () => {
       if (reponse.ok) {
         navigate('../.');
       } else {
-        setInfo({ message: 'Le projet ne peut pas etre jouté', success: false });
+        setInfo({ message: 'Le projet ne peut pas être jouté', success: false });
       }
     } catch (error) {
       console.error('Error:', error);

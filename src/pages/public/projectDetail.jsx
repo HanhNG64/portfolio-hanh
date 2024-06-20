@@ -54,7 +54,7 @@ const ProjectDetail = () => {
       {!error && (
         <Card className="mt-14 shadow-lg">
           <CardHeader floated={false} color="blue-gray">
-            <img src={project.image} alt="Photo du projet" className="w-full h-64 object-cover md:h-96" aria-label="Image du projet" />
+            <img src={project.image_cover} alt="Photo du projet" className="w-full h-64 object-cover md:h-96" aria-label="Image du projet" />
           </CardHeader>
           <CardBody>
             <div className="mb-3 flex items-center justify-between">

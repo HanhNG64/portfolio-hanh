@@ -6,20 +6,20 @@ import Loader from '@components/public/loader';
 import { useFetchProjectImages } from '@utils/projectUtil.jsx';
 
 const Home = () => {
-  const { projects, isLoading } = useFetchProjectImages();
+  const { images, isLoading } = useFetchProjectImages();
 
   if (isLoading) {
     return <Loader />;
   }
 
-  const images = () => {
-    return projects.map((project) => project.image);
+  const getImages = () => {
+    return images.map((image) => image.image_cover);
   };
 
   return (
     <div className="max-container main-padding-top">
       <ABout />
-      <SlideShow pictures={images()} />
+      <SlideShow pictures={getImages()} />
       <Skills />
     </div>
   );

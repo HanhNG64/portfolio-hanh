@@ -53,7 +53,6 @@ const Project = () => {
   const handleEditClick = () => {
     const isInProjects = location.pathname.includes('/project');
     const url = isInProjects ? `./edit/${projectActive._id}` : `project/edit/${projectActive._id}`;
-    console.log('url:', url);
     navigate(`${url}`);
   };
 
@@ -70,7 +69,7 @@ const Project = () => {
       )}
       {projectActive && (
         <div className="flex flex-col justify-center items-center">
-          <img className="h-[500px] w-full object-cover object-center" src={projectActive.image} alt="image du projet" />
+          <img className="h-[500px] w-full object-cover object-center" src={projectActive.image_cover} alt="image du projet" />
           <div className="flex flex-col justify-center items-center gap-2 mb-4">
             <p>{projectActive.title}</p>
             <div className="grid grid-cols-4 gap-2 items-center justify-items-center">
