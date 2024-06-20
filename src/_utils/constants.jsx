@@ -1,4 +1,4 @@
-const API_URL = `${import.meta.env.VITE_API_URL}`;
+const API_URL = 'https://portfolio-api-chi-rosy.vercel.app';
 export const API_ROUTES = {
   SIGN_UP: `${API_URL}/api/auth/signup`,
   SIGN_IN: `${API_URL}/api/auth/login`,
