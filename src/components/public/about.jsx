@@ -7,13 +7,13 @@ const ABout = () => {
   return (
     <section className="px-8 w-full">
       <div className="w-fit mx-auto md:ml-0">
-        <h1 className="">DEVELOPPEUSE WEB</h1>
+        <h2 className="">DEVELOPPEUSE WEB</h2>
       </div>
       <div className="relative max-w-screen-md mt-14 overflow-hidden gradient-border-top gradient-border-left bg-primary shadow-black">
         <div className="flex flex-col items-start justify-between md:flex-row md:justify-center md:items-center">
           <Cube />
           <div className="mt-10 ml-10 pb-10 md:flex-1 md:mt-14">
-            <h2 className="text-white text-center mr-10 md:text-start md:text-nowrap">Bienvenue sur mon portfolio !</h2>
+            <h3 className="text-white text-center mr-10 md:text-start md:text-nowrap">Bienvenue sur mon portfolio !</h3>
             <p className="text-justify mt-5 mr-10 text-white ">
               Je suis Hanh Nguyen, une développeuse web full stack, animée par la passion de créer et d&apos;apprendre. Explorez mes projets et suivez
               mon évolution dans le monde du développement web.
@@ -28,7 +28,7 @@ const ABout = () => {
         <img src={Logo} alt="logo Hanh dev web" className="mx-auto w-64 h-64 mt-5 object-cover rounded-full md:mt-0" />
         <div className="flex flex-col justify-between items-start mt-10 ml-10 mr-10 mb-10">
           <div className="anim-bar mb-4"></div>
-          <h2 className="font-engagement text-4xl mb-5">Hanh Nguyen</h2>
+          <h3 className="font-engagement text-4xl mb-5">Hanh Nguyen</h3>
           <p className="text-justify">
             Après des années en développement Java, j&apos;ai découvert un engouement pour le développement web. Fascinée par la créativité, j&apos;ai
             suivi une formation pour enrichir mes compétences en Frontend et Backend. Actuellement, je cherche un poste de développeuse web full stack

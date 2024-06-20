@@ -14,7 +14,7 @@ const Projects = () => {
   return (
     <div className="max-container main-padding-top main-padding-bottom main-padding-x">
       <div className="w-fit mx-auto md:ml-0">
-        <h1>Les projets réalisés</h1>
+        <h2>Les projets réalisés</h2>
       </div>
       {error && <div className="h-[30vh] flex items-center justify-center mx-auto">Erreur de récupération de données...</div>}
 

@@ -8,9 +8,9 @@ const SlideShow = ({ pictures }) => {
   return (
     <section id="carousel" className="pt-20 w-full p-8">
       <div className="w-fit text-center mb-10 mx-auto">
-        <h2 className="relative z-0 text-2xl w-fit mx-auto mb-7 sm:text-4xl sm:mb-10 md:text-5xl md:mb-12 after:absolute after:w-full after:h-2 after:bottom-0 after:left-0 after:-z-10 after:bg-main-light sm:after:h-5 sm:after:-bottom-2">
+        <h3 className="relative z-0 text-2xl w-fit mx-auto mb-7 sm:text-4xl sm:mb-10 md:text-5xl md:mb-12 after:absolute after:w-full after:h-2 after:bottom-0 after:left-0 after:-z-10 after:bg-main-light sm:after:h-5 sm:after:-bottom-2">
           Découvrez mes projets
-        </h2>
+        </h3>
         <p className="mt-10 max-w-3xl">
           Prêt à donner vie à votre site web ? Avec une dose de créativité et une maîtrise technologique, je vais transformer votre vision en réalité.
           Parcourez cette galerie pour découvrir l&apos;univers des possibilités et commencez votre voyage qui vous mettra sous les projecteurs du

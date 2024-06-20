@@ -67,7 +67,7 @@ const Header = () => {
       <Navbar className="mx-auto max-w-screen-xl px-6 py-3 rounded-none border-none bg-[#0d1137] bg-opacity-100">
         <div className="flex items-center justify-between text-blue-gray-900">
           <div className="flex flex-col h-full w-[150px] items-center">
-            <p className="font-engagement text-6xl">Hanh</p>
+            <h1 className="font-engagement text-6xl">Hanh</h1>
             <div className="flex items-center w-full justify-center">
               <div className="flex-grow border-t border-white"></div>
               <p className="mx-2 text-white font-bold">DEV WEB</p>
@@ -82,6 +82,7 @@ const Header = () => {
             className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent md:hidden"
             ripple={false}
             onClick={() => setOpenNav(!openNav)}
+            aria-label="Menu icone"
           >
             {openNav ? <XMarkIcon className="h-6 w-6" strokeWidth={2} /> : <Bars3Icon className="h-6 w-6" strokeWidth={2} />}
           </IconButton>

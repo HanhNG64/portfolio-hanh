@@ -37,7 +37,7 @@ const ProjectDetail = () => {
   return (
     <div className="max-container main-padding-top main-padding-bottom main-padding-x">
       <div className="w-fit mx-auto md:ml-0">
-        <h1>Détail du projet</h1>
+        <h2>Détail du projet</h2>
       </div>
       {error && <div className="h-[30vh] flex items-center justify-center mx-auto">Erreur de récupération de données...</div>}
 
@@ -59,7 +59,7 @@ const ProjectDetail = () => {
           <CardBody>
             <div className="mb-3 flex items-center justify-between">
               {project.title && (
-                <Typography variant="h2" color="blue-gray">
+                <Typography variant="paragraph" className="font-bold text-2xl">
                   {project?.title}
                 </Typography>
               )}
@@ -67,7 +67,7 @@ const ProjectDetail = () => {
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6">
                   <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
                 </svg>
-                <span className="ml-1.5">{like}</span>
+                <span className="ml-1.5 text-black"> {like}</span>
               </Button>
             </div>
 
@@ -75,14 +75,14 @@ const ProjectDetail = () => {
               <Typography variant="paragraph" className="font-bold">
                 Description
               </Typography>
-              {project.description && <Typography color="gray">{project.description}</Typography>}
+              {project.description && <Typography>{project.description}</Typography>}
             </div>
 
             <div className="mb-3">
               <Typography variant="paragraph" className="font-bold">
                 Problématique
               </Typography>
-              {project.problematic && <Typography color="gray">{project.problematic}</Typography>}
+              {project.problematic && <Typography>{project.problematic}</Typography>}
             </div>
 
             <div className="flex flex-col justify-between items-center mt-5 md:flex-row">
