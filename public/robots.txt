@@ -1,5 +1,3 @@
 User-agent: *
 Disallow: /private/
-Allow: /
-
-Sitemap: https://www.example.com/sitemap.xml
+Sitemap: https://portfolio-hanh-5qvr.vercel.app/sitemap.xml
