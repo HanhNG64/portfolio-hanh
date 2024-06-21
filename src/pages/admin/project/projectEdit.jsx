@@ -33,7 +33,6 @@ const ProjectEdit = () => {
   }, []);
 
   let updateProject = async (data) => {
-    console.log('projet edit A:', data);
     const newProject = {
       title: data.title,
       subTitle: data.subTitle,
@@ -57,7 +56,7 @@ const ProjectEdit = () => {
   const onSubmit = async (data) => {
     try {
       const reponse = await updateProject(data);
-      if (!reponse.ok) {
+      if (reponse.ok) {
         navigate('../.');
       } else {
         setInfo({ message: 'La modification a échoué.', success: false });
