@@ -39,7 +39,7 @@ function ContactForm() {
   };
 
   return (
-    <section className="mx-auto px-3 text-center text-white max-w-[800px] md:w-[70%]">
+    <section className="mx-auto px-3 text-center text-white max-w-[500px] w-[80%] md:max-w-[800px] md:w-[70%]">
       <div>
         <h2 className="mb-12">On se rencontre ?</h2>
         <p className="mb-12 max-w-[400px] mx-auto">

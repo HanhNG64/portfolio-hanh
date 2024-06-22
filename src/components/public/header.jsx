@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { animateScroll as scroll } from 'react-scroll';
 import { Navbar, Collapse, Typography, IconButton } from '@material-tailwind/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
@@ -21,10 +20,19 @@ const Header = () => {
   }, []);
 
   const scrollToTop = () => {
-    scroll.scrollToTop();
+    console.log('scrollToTop window');
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   };
+
   const scrollToBottom = () => {
-    scroll.scrollToBottom();
+    console.log('scrollToBottom window');
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: 'smooth',
+    });
   };
 
   const handleWindowResize = () => window.innerWidth >= 960 && setOpenNav(false);
@@ -66,11 +74,11 @@ const Header = () => {
     <header className="max-w-full bg-[#0d1137]">
       <Navbar className="mx-auto max-w-screen-xl px-6 py-3 rounded-none border-none bg-[#0d1137] bg-opacity-100">
         <div className="flex items-center justify-between text-blue-gray-900">
-          <div className="flex flex-col h-full w-[150px] items-center">
-            <h1 className="font-engagement text-6xl">Hanh</h1>
+          <div className="flex flex-col h-full w-[100px] items-center md:w-[150px]">
+            <h1 className="font-engagement text-4xl md:text-6xl">Hanh</h1>
             <div className="flex items-center w-full justify-center">
               <div className="flex-grow border-t border-white"></div>
-              <p className="mx-2 text-white font-bold">DEV WEB</p>
+              <p className="mx-2 text-white text-xs font-bold md:text-base">DEV WEB</p>
               <div className="flex-grow border-t border-white"></div>
             </div>
           </div>

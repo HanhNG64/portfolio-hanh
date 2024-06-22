@@ -10,7 +10,7 @@ const Cube = () => {
   const CUBE_SIZE = '140px';
 
   return (
-    <div className="cube-perspective mt-20 mb-16 mx-auto md:ml-28 md:mr-[100px]" style={{ width: CUBE_SIZE, height: CUBE_SIZE }}>
+    <div className="cube-perspective mt-20 mb-16 mx-auto md:ml-28" style={{ width: CUBE_SIZE, height: CUBE_SIZE }}>
       <div className="w-full h-full relative transform-style-preserve-3d animate-cube-spin">
         <div className="absolute top bg-cover bg-no-repeat" style={{ width: CUBE_SIZE, height: CUBE_SIZE, backgroundImage: `url(${github})` }}></div>
         <div

@@ -26,7 +26,7 @@ const SlideShow = ({ pictures }) => {
           <IconButton
             variant="text"
             onClick={handlePrev}
-            className="w-10 h-10 text-white !absolute top-2/4 left-4 -translate-y-2/4 bg-primary rounded-full hover:text-secondary hover:bg-primary"
+            className="w-10 h-10 text-white !absolute top-1/2 left-4 -translate-y-1/2 bg-primary rounded-full hover:text-secondary hover:bg-primary flex items-center justify-center"
             aria-label="Slide précédent"
           >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-6 w-6">
@@ -39,7 +39,7 @@ const SlideShow = ({ pictures }) => {
             variant="text"
             color="white"
             onClick={handleNext}
-            className="w-10 h-10 !absolute top-2/4 !right-4 -translate-y-2/4  bg-primary rounded-full hover:text-secondary hover:bg-primary"
+            className="w-10 h-10 !absolute top-1/2 !right-4 -translate-y-1/2  bg-primary rounded-full hover:text-secondary hover:bg-primary flex items-center justify-center"
             aria-label="Slide suivant"
           >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-6 w-6">

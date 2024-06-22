@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { accountService } from '@services';
 import { Link as NavLink } from 'react-router-dom';
-import { animateScroll as scroll } from 'react-scroll';
 import { Navbar, Collapse, Typography, Button, IconButton, List, ListItem, Menu, MenuHandler, MenuList, MenuItem } from '@material-tailwind/react';
 import { ChevronDownIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Bars4Icon, RectangleGroupIcon, SquaresPlusIcon, UserGroupIcon } from '@heroicons/react/24/solid';
@@ -38,7 +37,11 @@ const Header = () => {
   }, []);
 
   const scrollToTop = () => {
-    scroll.scrollToTop();
+    console.log('scrollToTop window');
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   };
 
   const handleWindowResize = () => window.innerWidth >= 960 && setOpenNav(false);
