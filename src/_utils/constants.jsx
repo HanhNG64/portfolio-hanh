@@ -1,4 +1,4 @@
-const API_URL = 'https://p8-portfolio-api.vercel.app';
+const API_URL = 'https://api-portfolio-tawny.vercel.app';
 export const API_ROUTES = {
   SIGN_UP: `${API_URL}/api/auth/signup`,
   SIGN_IN: `${API_URL}/api/auth/login`,
