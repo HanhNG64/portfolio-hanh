@@ -7,7 +7,7 @@ const Projects = () => {
   const { projects, isLoading, error } = useFetchProjects();
   window.scrollTo(0, 0);
 
-  if (isLoading) {
+  if (!isLoading) {
     return <Loader />;
   }
 

@@ -159,14 +159,22 @@
 
   /* Loader*/
   .animate-spinSlow {
-    animation: spin 3s linear infinite;
+    animation: spinLoader 3s linear infinite;
   }
 
   .animate-spinMedium {
-    animation: spin 2s linear infinite;
+    animation: spinLoader 2s linear infinite;
   }
 
   .animate-spinFast {
-    animation: spin 1s linear infinite;
+    animation: spinLoader 1s linear infinite;
+  }
+  @keyframes spinLoader {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
 }
