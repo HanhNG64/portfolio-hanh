@@ -33,6 +33,12 @@ function ProjectForm({ submit, project }) {
       () => ({
         title: project?.title,
         subTitle: project?.subTitle,
+        image_cover_large: project?.image_cover_large,
+        image_cover_medium: project?.image_cover_medium,
+        image_cover_small: project?.image_cover_small,
+        image_min_large: project?.image_min_large,
+        image_min_medium: project?.image_min_medium,
+        image_min_small: project?.image_min_small,
         description: project?.description,
         problematic: project?.problematic,
         site: project?.site,
@@ -47,8 +53,8 @@ function ProjectForm({ submit, project }) {
     reset(project);
   }, [project]);
 
-  const file = watch(['file']);
-  const [filePreview] = useFilePreview(file);
+  const fileCoverLarge = watch(['fileCoverLarge']);
+  const [filePreview] = useFilePreview(fileCoverLarge);
 
   return (
     <section className="mx-auto px-3 pb-20 text-center max-w-[800px] md:w-[70%]">
@@ -103,12 +109,32 @@ function ProjectForm({ submit, project }) {
         </label>
 
         <div className="border mb-5">
-          <label htmlFor="file" className="text-left mb-[2px]">
-            <p className="text-center pt-10 pb-10">Image du projet*</p>
+          <label htmlFor="fileCoverLarge" className="text-left mb-[2px]">
+            <p className="text-center pt-10 pb-10">Image de la couverture large*</p>
             <div className="h-full w-full object-cover object-center flex justify-center items-center">
-              {(filePreview || project?.image_cover) && <img src={filePreview ?? project?.image_cover} alt="preview" />}
+              {(filePreview || project?.image_cover_large) && <img src={filePreview ?? project?.image_cover_large} alt="preview" />}
             </div>
-            <input {...register('file')} type="file" id="file" className="mb-4 p-1 rounded-md resize-none text-black" />
+            <input {...register('fileCoverLarge')} type="file" id="fileCoverLarge" className="mb-4 p-1 rounded-md resize-none text-black" />
+          </label>
+          <label htmlFor="fileCoverMedium" className="text-left flex justify-center items-center mb-5">
+            <p className="text-center mr-5">Image de la couverture medium*</p>
+            <input {...register('fileCoverMedium')} type="file" id="fileCoverMedium" className="resize-none text-black" />
+          </label>
+          <label htmlFor="fileCoverSmall" className="text-left flex justify-center items-center mb-5">
+            <p className="text-center mr-5">Image de la couverture small*</p>
+            <input {...register('fileCoverSmall')} type="file" id="fileCoverSmall" className="resize-none text-black" />
+          </label>
+          <label htmlFor="fileMinLarge" className="text-left flex justify-center items-center  mb-5">
+            <p className="text-center mr-5">Image miniature large*</p>
+            <input {...register('fileMinLarge')} type="file" id="fileMinLarge" className="rounded-md resize-none text-black" />
+          </label>
+          <label htmlFor="fileMinMedium" className="text-left flex justify-center items-center  mb-5">
+            <p className="text-center mr-5">Image miniature medium*</p>
+            <input {...register('fileMinMedium')} type="file" id="fileMinMedium" className=" rounded-md resize-none text-black" />
+          </label>
+          <label htmlFor="fileMinSmall" className="text-left flex justify-center items-center  mb-5">
+            <p className="text-center mr-5">Image miniature small*</p>
+            <input {...register('fileMinSmall')} type="file" id="fileMinSmall" className="TOTO rounded-md resize-none text-black" />
           </label>
         </div>
 

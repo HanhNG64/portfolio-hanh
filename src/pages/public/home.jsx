@@ -13,7 +13,13 @@ const Home = () => {
   }
 
   const getImages = () => {
-    return images.map((image) => image.image_cover);
+    const imagesObbject = images.map((image) => ({
+      large: image.image_cover_large,
+      medium: image.image_cover_medium,
+      small: image.image_cover_small,
+      default: image.image_cover_small,
+    }));
+    return imagesObbject;
   };
 
   return (

@@ -49,7 +49,12 @@ const SlideShow = ({ pictures }) => {
         )}
       >
         {pictures.map((image, index) => (
-          <img key={index} src={image} alt={`Slide ${index}`} className="h-full w-full object-cover object-center" />
+          <picture key={index} className="h-full w-full object-cover object-center">
+            <source media="(min-width: 1024px)" srcSet={image.large} />
+            <source media="(min-width: 768px)" srcSet={image.medium} />
+            <source media="(min-width: 640px)" srcSet={image.small} />
+            <img src={image.default} alt={`Slide ${index}`} aria-label="Image du projet" className="h-full w-full object-cover object-center" />
+          </picture>
         ))}
       </Carousel>
       <div className="flex flex-col items-end mt-3">

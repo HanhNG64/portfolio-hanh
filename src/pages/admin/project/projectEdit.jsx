@@ -36,8 +36,12 @@ const ProjectEdit = () => {
     const newProject = {
       title: data.title,
       subTitle: data.subTitle,
-      image_cover: data.image_cover,
-      image_min: data.image_min,
+      image_cover_large: data.image_cover_large,
+      image_cover_medium: data.image_cover_medium,
+      image_cover_small: data.image_cover_small,
+      image_min_large: data.image_min_large,
+      image_min_medium: data.image_min_medium,
+      image_min_small: data.image_min_small,
       description: data.description,
       problematic: data?.problematic,
       site: data.site,
@@ -47,8 +51,25 @@ const ProjectEdit = () => {
 
     let newData = new FormData();
     newData.append('project', JSON.stringify(newProject));
-    if (data.file[0]) {
-      newData.append('image', data.file[0]);
+
+    if (data.fileCoverLarge[0]) {
+      newData.append('image_cover_large', data.fileCoverLarge[0]);
+    }
+    if (data.fileCoverMedium[0]) {
+      newData.append('image_cover_medium', data.fileCoverMedium[0]);
+    }
+    if (data.fileCoverSmall[0]) {
+      newData.append('image_cover_small', data.fileCoverSmall[0]);
+    }
+
+    if (data.fileMinLarge[0]) {
+      newData.append('image_min_large', data.fileMinLarge[0]);
+    }
+    if (data.fileMinMedium[0]) {
+      newData.append('image_min_medium', data.fileMinMedium[0]);
+    }
+    if (data.fileMinSmall[0]) {
+      newData.append('image_min_small', data.fileMinSmall[0]);
     }
     return await projectService.updateProject(accountService.getToken(), newData, id);
   };

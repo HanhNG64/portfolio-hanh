@@ -69,7 +69,7 @@ const Project = () => {
       )}
       {projectActive && (
         <div className="flex flex-col justify-center items-center">
-          <img className="h-[500px] w-full object-cover object-center" src={projectActive.image_cover} alt="image du projet" />
+          <img className="h-full w-full object-cover object-center" src={projectActive.image_cover_large} alt="image du projet" />
           <div className="flex flex-col justify-center items-center gap-2 mb-4">
             <p>{projectActive.title}</p>
             <div className="grid grid-cols-4 gap-2 items-center justify-items-center">

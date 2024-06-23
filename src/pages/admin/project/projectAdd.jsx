@@ -21,13 +21,23 @@ const ProjectAdd = () => {
 
     const bodyFormData = new FormData();
     bodyFormData.append('project', JSON.stringify(project));
-    bodyFormData.append('image', data.file[0]);
+    bodyFormData.append('image_cover_large', data.fileCoverLarge[0]);
+    bodyFormData.append('image_cover_medium', data.fileCoverSmall[0]);
+    bodyFormData.append('image_cover_small', data.fileCoverSmall[0]);
+    bodyFormData.append('image_min_large', data.fileMinLarge[0]);
+    bodyFormData.append('image_min_medium', data.fileMinSmall[0]);
+    bodyFormData.append('image_min_small', data.fileMinSmall[0]);
     return await projectService.addProject(accountService.getToken(), bodyFormData);
   };
 
   const onSubmit = async (data) => {
-    if (!data.file[0]) {
-      alert('Vous devez ajouter une image');
+    if (!data.fileCoverLarge[0] || !data.fileCoverMedium[0] || !data.fileCoverSmall[0]) {
+      alert('Vous devez ajouter toutes les images pour la couverture');
+      return;
+    }
+    if (!data.fileMinLarge[0] || !data.fileMinMedium[0] || !data.fileMinSmall[0]) {
+      alert('Vous devez ajouter toutes les images miniatures');
+      return;
     }
 
     try {

@@ -40,14 +40,20 @@ const Card = ({ project }) => {
 
   return (
     <article className="relative overflow-hidden rounded-2xl border border-gray-300 hover:border-primary transition-transform duration-400 ease-out group w-full sm:max-w-[300px] md:max-w-[350px] lg:max-w-[400px]">
-      <LinkImg
-        to={`/projects/${project._id}`}
-        src={project.image_min}
-        alt="Image du projet"
-        className="w-full h-full object-cover object-center"
-        ariaLabel="Image du projet"
-        targetBlank={false}
-      />
+      <Link to={`/projects/${project._id}`}>
+        <picture className="h-full w-full object-cover object-center">
+          <source media="(min-width: 1024px)" srcSet={project.image_min_large} />
+          <source media="(min-width: 768px)" srcSet={project.image_min_medium} />
+          <source media="(min-width: 640px)" srcSet={project.image_min_small} />
+          <img
+            src={project.image_min_small}
+            alt="Image du projet"
+            aria-label="Image du projet"
+            className="h-full w-full object-cover object-center"
+          />
+        </picture>
+      </Link>
+
       <Button
         variant="text"
         color="red"
